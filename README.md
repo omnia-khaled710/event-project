@@ -30,8 +30,7 @@ The application has three main layouts:
 To get the project up and running locally on your machine, follow these steps:
 
 ### 1. Clone the Repository
-
-Clone the repository from GitHub to your local machine:
+```bash
 git clone https://github.com/your-username/event-management-app.git
 cd event-management-app
 run npm install 
