@@ -1,27 +1,38 @@
-# EventProject
+# Event Management Angular Application
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.14.
+This Angular application is designed for managing events. It includes a homepage displaying event cards,
+a list of events with search capabilities, and a registration page. Users can view event details, edit or remove events, and register for the platform.
 
-## Development server
+## Project Overview
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+The application has three main layouts:
 
-## Code scaffolding
+1. **Home Page**: Displays event cards, each linking to detailed information about a specific event.
+2. **Events List Page**: Lists all events with search filters and options to add, edit, or remove events.
+3. **Registration Page**: Allows users to register for the platform with basic information such as email, password, and phone number.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Features
 
-## Build
+- **Home Page**:
+  - Displays event cards with an overview of each event.
+  - Links to detailed event pages.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- **Event List Page**:
+  - Search functionality to filter events based on criteria.
+  - Button to add a new event.
+  - Options to edit or remove existing events.
 
-## Running unit tests
+- **Registration Page**:
+  - Users can register with their email, password, and phone number.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Instructions for Running the Project Locally
 
-## Running end-to-end tests
+To get the project up and running locally on your machine, follow these steps:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### 1. Clone the Repository
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Clone the repository from GitHub to your local machine:
+git clone https://github.com/your-username/event-management-app.git
+cd event-management-app
+run npm install 
+npm start 
