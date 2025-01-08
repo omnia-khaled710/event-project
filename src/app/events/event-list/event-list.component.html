@@ -1,0 +1,45 @@
+<section>
+    <h1>MY EVENTS</h1>  
+  
+    <div class="add-event-container text-center my-3">
+      <button  class="add-event-button" (click)="openAddEventDialog()">Add New Event</button>
+    </div> 
+  
+    <form class="d-flex w-50 m-auto">
+      <input class="form-control mr-sm-2" type="search" [(ngModel)]="searchTerm" name="search" placeholder="Search events">
+    </form>
+  
+    <div *ngIf="loading$ | async" class="loader-container">
+      <app-loader></app-loader>
+    </div>
+  
+    <div *ngIf="error$ | async as error; else eventsTemplate">
+      <div class="error-message">
+        <p>Error: {{ error }}</p>
+      </div>
+    </div>
+    
+    <ng-template #eventsTemplate>
+      <div *ngIf="(events$ | async) as events">
+        <div *ngIf="(events | search: searchTerm).length > 0; else noDataTemplate">
+          <div class="card-container">
+            <div *ngFor="let event of (events | search: searchTerm)" class="card">
+              <img [src]="event.thumbnail" alt="{{ event.title }}" class="card-thumbnail" (click)="openEditEventDialog(event)" />
+              <div class="card-content">
+                <h3 class="card-title">{{ event.title }}</h3>
+                <p class="card-category">{{ event.category }}</p>
+                <p class="card-description">{{ event.description }}</p>
+                <p class="card-price">Price: ${{ event.price }}</p>
+                <button class="btn btn-danger" (click)="deleteEvent(event.id)">Delete</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <ng-template #noDataTemplate>
+          <p>No events available with this name.</p>
+        </ng-template>
+      </div>
+    </ng-template>
+  </section>
+  

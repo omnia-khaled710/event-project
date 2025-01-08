@@ -1,0 +1,95 @@
+<section class="registration-section">
+  <div class="container py-3">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-lg-8 col-md-10 col-sm-12">
+        <div class="card rounded-3">
+          <img
+            src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img3.webp"
+            class="w-100"
+            style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;"
+            alt="Sample photo"
+          />
+          <div class="card-body p-md-5">
+            <h3 class="mb-4 pb-2 pb-md-0 mb-md-4 px-md-2">Register Now!</h3>
+
+            <form class="px-md-2" [formGroup]="userForm" (ngSubmit)="submit()">
+              <div class="form-outline mb-3">
+                <label class="form-label" for="email">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  formControlName="email"
+                  class="form-control"
+                  placeholder="Enter your email"
+                />
+                <div
+                  class="text-danger"
+                  *ngIf="userForm.controls['email']?.invalid && userForm.controls['email']?.touched"
+                >
+                  <span *ngIf="userForm.controls['email']?.errors?.['required']">
+                    Email is required.
+                  </span>
+                  <span *ngIf="userForm.controls['email']?.errors?.['email']">
+                    Invalid email format.
+                  </span>
+                </div>
+              </div>
+
+              <div class="form-outline mb-3">
+                <label class="form-label" for="password">Password</label>
+                <input
+                  type="password"
+                  id="password"
+                  formControlName="password"
+                  class="form-control"
+                  placeholder="Enter your password"
+                />
+                <div
+                  class="text-danger"
+                  *ngIf="userForm.controls['password']?.invalid && userForm.controls['password']?.touched"
+                >
+                  <span *ngIf="userForm.controls['password']?.errors?.['required']">
+                    Password is required.
+                  </span>
+                  <span *ngIf="userForm.controls['password']?.errors?.['minlength']">
+                    Password must be at least 8 characters.
+                  </span>
+                </div>
+              </div>
+
+              <div class="form-outline mb-3">
+                <label class="form-label" for="phone">Phone</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  formControlName="phone"
+                  class="form-control"
+                  placeholder="Enter your phone number"
+                />
+                <div
+                  class="text-danger"
+                  *ngIf="userForm.controls['phone']?.invalid && userForm.controls['phone']?.touched"
+                >
+                  <span *ngIf="userForm.controls['phone']?.errors?.['required']">
+                    Phone number is required.
+                  </span>
+                  <span *ngIf="userForm.controls['phone']?.errors?.['minlength']">
+                    Phone number must be at least 11 digits.
+                  </span>
+                </div>
+              </div>
+
+              <button
+                type="submit"
+                class="btn-custom btn-lg mb-1"
+                [disabled]="userForm.invalid"
+              >
+                Submit
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

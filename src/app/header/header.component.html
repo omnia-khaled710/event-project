@@ -1,0 +1,11 @@
+<div class="header">
+  <nav class="navbar">
+    <a routerLink="/home" routerLinkActive="active" class="logo">LOGO</a>
+    <button class="menu-toggle" (click)="toggleMenu()">☰</button>
+    <ul class="menu" [class.active]="isMenuOpen">
+      <li><a routerLink="/home" routerLinkActive="active" (click)="closeMenu()">Home</a></li>
+      <li><a routerLink="/events" routerLinkActive="active" (click)="closeMenu()">Events</a></li>
+      <li><a routerLink="/register" routerLinkActive="active" (click)="closeMenu()">Register</a></li>
+    </ul>
+  </nav>
+</div>

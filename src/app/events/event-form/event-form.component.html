@@ -1,0 +1,37 @@
+<div class="mat-dialog-container">
+  <h1 mat-dialog-title>{{isEdit ? 'Edit Event' : 'Add New Event'}}</h1>
+  <div mat-dialog-content>
+    <form [formGroup]="eventForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="title">Event Title</label>
+        <input matInput type="text" class="form-control" formControlName="title" placeholder="Enter event title">
+        <div class="text-danger" *ngIf="eventForm.controls['title']?.invalid && eventForm.controls['title']?.touched">
+          <span>Title is required.</span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea matInput class="form-control" formControlName="description" placeholder="Enter event description"></textarea>
+        <div class="text-danger" *ngIf="eventForm.controls['description']?.invalid && eventForm.controls['description']?.touched">
+          <span>Description is required.</span>
+        </div>
+      </div>
+     
+      <div class="form-group">
+        <label for="price">Price</label>
+        <input matInput type="number" class="form-control" formControlName="price" placeholder="Enter price">
+        <div class="text-danger" *ngIf="eventForm.controls['price']?.invalid && eventForm.controls['price']?.touched">
+          <span>Price is required.</span>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div mat-dialog-actions>
+    <button mat-button type="button" class="btn btn-danger" (click)="onCancel()">Cancel</button>
+    <button mat-raised-button type="submit" class="btn-primary-custom" (click)="onSubmit()" [disabled]="eventForm.invalid">
+      {{isEdit ? 'Edit Event ' : 'Add Event'}}
+    </button>
+  </div>
+</div>

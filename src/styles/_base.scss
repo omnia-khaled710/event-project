@@ -1,0 +1,26 @@
+@import '../styles/variables';
+  body {
+    font-size: $font-size-base;
+    color: $text-color;
+    margin: 0;
+    padding: 0;
+    background-color: $secondary-color;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    font-weight: $font-weight-bold;
+    color: $primary-color;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  button {
+    font-family: inherit;
+    font-size: inherit;
+  }
+  
+  

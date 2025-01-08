@@ -1,0 +1,91 @@
+@import '../../../styles/variables';
+
+.mat-dialog-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  border-radius: 12px 12px 0 0;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  background-color: #fff;
+  animation: slideUp 0.3s ease-out;
+
+  @media (min-width: 768px) {
+    max-width: 500px; 
+    left: 50%;
+    transform: translateX(-50%);
+    top: 20%;
+    bottom: 20%;
+  }
+
+  @media (max-width: 576px) {
+    padding: 15px;
+    top: 10%;
+    bottom: 10%;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+h1[mat-dialog-title] {
+  font-size: $size-lg;
+  font-weight: bold;
+  color: $primary-color;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.mat-dialog-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  form {
+    display: flex;
+    flex-direction: column;
+
+    .mat-form-field {
+      width: 100%;
+    }
+  }
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.text-danger {
+  font-size: 0.875rem;
+  color: #d9534f;
+}
+
+.btn-primary-custom {
+  background-color: $primary-color;
+  color: white;
+  border: none;
+  &:hover {
+    background-color: lighten($primary-color, 10%);
+  }
+  &:disabled {
+    background-color: $primary-color;
+    color: #fff;
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+}
+
+.mat-mdc-dialog-actions {
+  justify-content: center;
+}
